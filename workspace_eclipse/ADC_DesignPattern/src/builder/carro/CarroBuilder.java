@@ -11,27 +11,32 @@ public class CarroBuilder {
 		carro = new Carro();
 	}
 	
-	public void buildPortas(Porta[] portas) {
+	public CarroBuilder buildPortas(Porta[] portas) {
 		carro.setPortas(portas);
+		return this;
 	}
 	
-	public void buildMotor(Motor motor) {
+	public CarroBuilder buildMotor(Motor motor) {
 		carro.setMotor(motor);
+		return this;
 	}
 	
-	public void buildComputadorBordo(ComputadorBordo cBordo) {
+	public CarroBuilder buildComputadorBordo(ComputadorBordo cBordo) {
 		carro.setComputadorBordo(cBordo);
+		return this;
 	}
 	
-	public void buildFreioABS(FreioABS abs) {
+	public CarroBuilder buildFreioABS(FreioABS abs) {
 		carro.setFreioABS(abs);
+		return this;
 	}
 
 	public Carro getCarro() {
 		return carro;
 	}
 	
-	private void validarPortas() {
+	private CarroBuilder validarPortas() {
+		
 		if (carro.getPortas() ==  null) {
 			throw new IllegalStateException("Carro deve ter portas");
 		}
@@ -42,6 +47,7 @@ public class CarroBuilder {
 		throw new IllegalStateException("Numero de portas invalido: " + numeroDePortas);
 		
 	}
+	return this;
 	
 		
 	
